@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hearth & Paws — House & Pet Sitting by Erika Huang</title>
+  <meta name="description" content="Professional house and pet sitting in NYC & Miami. Trusted, caring, and detail-oriented. Meet Erika — and her Chief of Staff, Khaleesi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap" id="navWrap">
+    <nav class="nav container">
+      <a href="#home" class="nav-logo">Hearth <em>&</em> Paws</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#book" class="nav-book">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <a href="#about" class="drawer-link" onclick="closeDrawer()">About</a>
+    <a href="#services" class="drawer-link" onclick="closeDrawer()">Services</a>
+    <a href="#reviews" class="drawer-link" onclick="closeDrawer()">Reviews</a>
+    <a href="#contact" class="drawer-link" onclick="closeDrawer()">Contact</a>
+    <a href="#book" class="drawer-link drawer-book" onclick="closeDrawer()">Book Now</a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <!-- SECTION: HOME -->
+  <section class="page-section hero-section" id="home">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <p class="eyebrow animate-1">New York City &amp; Miami</p>
+        <h1 class="animate-2">Your home, <em>cared for.</em><br>Your pets, <em>adored.</em></h1>
+        <p class="hero-lead animate-3">Professional house &amp; pet sitting with the warmth, reliability, and attention to detail that lets you travel without a second thought.</p>
+        <div class="hero-actions animate-4">
+          <a href="#book" class="btn-primary">Request a Booking</a>
+          <a href="#services" class="btn-outline">See Services</a>
+        </div>
+      </div>
+      <div class="hero-pills animate-5">
+        <div class="pill">Home-Trusted</div>
+        <div class="pill">Pet-First Care</div>
+        <div class="pill">Daily Updates</div>
+        <div class="pill">Background Checked</div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- SECTION: ABOUT -->
+  <section class="page-section about-section" id="about">
+    <div class="container">
+
+      <!-- Erika -->
+      <div class="about-block reveal">
+        <div class="about-photo-col">
+          <div class="photo-frame">
+            <img src="images/erika.jpg" alt="Erika Huang" onerror="this.style.display='none'" />
+            <div class="photo-fallback">Erika's Photo</div>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <span class="section-tag">About Erika</span>
+          <h2>Hi, I'm Erika.</h2>
+          <p>I'm a New York and Miami-based professional with a decade of experience managing high-stakes client relationships and complex operations. I bring the same standard of care, precision, and genuine investment to every home I sit for.</p>
+          <p>I treat your home as if it were mine and your pets as if they were family. Daily photo and video updates, strict routine adherence, and round-the-clock availability — every time.</p>
+          <ul class="about-list">
+            <li>Background-checked, references available upon request</li>
+            <li>Daily photo &amp; video updates via your preferred app</li>
+            <li>Strict adherence to feeding schedules &amp; house rules</li>
+            <li>Plant care, mail collection &amp; security checks included</li>
+            <li>Multilingual: English, Spanish, Italian &amp; Mandarin</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="section-divider reveal">
+        <span>introducing our Chief of Staff</span>
+      </div>
+
+      <!-- Khaleesi -->
+      <div class="about-block about-block-flip reveal">
+        <div class="about-text-col">
+          <span class="section-tag teal-tag">Chief of Staff</span>
+          <h2>Meet Khaleesi.</h2>
+          <p class="khaleesi-intro">13 years young. Shih-Tzu Poodle. Cancer survivor. Certified road warrior.</p>
+          <p>Khaleesi is the heart behind Hearth &amp; Paws. A sun-loving, scent-led adventurer who has survived cancer with the grace of a queen, kept her nose out the car window through every road trip, and has never once taken a walk she didn't personally curate.</p>
+          <p>She is proof that animals deserve patience, intention, and a whole lot of love. Every pet I care for, I bring Khaleesi's standard with me.</p>
+          <div class="k-badges">
+            <span>Chief Scent Officer</span>
+            <span>Sun Bon-Vivant</span>
+            <span>Road Warrior</span>
+            <span>Cancer Survivor</span>
+            <span>Mind of Her Own</span>
+          </div>
+        </div>
+        <div class="about-photo-col">
+          <div class="photo-frame photo-frame-warm">
+            <img src="images/khaleesi.jpg" alt="Khaleesi — Chief of Staff" onerror="this.style.display='none'" />
+            <div class="photo-fallback">Khaleesi's Photo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="gallery-block reveal">
+        <span class="section-tag">Pets I've Cared For</span>
+        <h3>A few familiar faces.</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/pet-1.jpg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-2.jpg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-3.jpg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-4.jpg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-5.jpg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: SERVICES -->
+  <section class="page-section services-section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I Offer</span>
+        <h2>Services &amp; Pricing</h2>
+        <p class="section-lead">All services include daily photo/video updates, plant care, mail collection, and 24/7 availability.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card reveal"><div class="svc-num">01</div><h3>Overnight House Sitting</h3><p>I stay in your home overnight, maintaining your full routine — feeding, walks, playtime, and security checks.</p><div class="svc-price">From $85 <em>/ night</em></div><a href="#book" class="btn-svc">Book This</a></div>
+        <div class="svc-card svc-featured reveal"><div class="svc-badge">Most Popular</div><div class="svc-num">02</div><h3>Extended Stay</h3><p>5+ night stays with full home management — pet care, plant watering, mail, and daily check-ins with you.</p><div class="svc-price">From $75 <em>/ night</em></div><a href="#book" class="btn-svc">Book This</a></div>
+        <div class="svc-card reveal"><div class="svc-num">03</div><h3>Drop-In Visit</h3><p>30–60 minute visits for feeding, a walk, or a home check. Pricing based on location.</p><div class="svc-price">From $30 <em>/ visit</em></div><a href="#book" class="btn-svc">Book This</a></div>
+        <div class="svc-card reveal"><div class="svc-num">04</div><h3>Dog Walking</h3><p>30 or 60-minute walks with a post-walk report card and photo update sent straight to you.</p><div class="svc-price">From $25 <em>/ walk</em></div><a href="#book" class="btn-svc">Book This</a></div>
+        <div class="svc-card reveal"><div class="svc-num">05</div><h3>Home Watch</h3><p>Regular home checks, mail collection, plant watering, and security walkthroughs. No pets required.</p><div class="svc-price">From $40 <em>/ visit</em></div><a href="#book" class="btn-svc">Book This</a></div>
+        <div class="svc-card svc-custom reveal"><div class="svc-num">06</div><h3>Custom Package</h3><p>Unique needs? Let's build something around your schedule, pets, and home.</p><div class="svc-price">Custom Pricing</div><a href="#contact" class="btn-svc">Get in Touch</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: REVIEWS -->
+  <section class="page-section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Client Reviews</span>
+        <h2>What Clients Say</h2>
+        <p class="section-lead">All reviews are submitted by verified clients and approved before appearing here.</p>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+      <div class="review-invite reveal">
+        <p>Had a great experience? I'd genuinely love to hear from you.</p>
+        <a href="#leave-review" class="btn-primary">Leave a Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAVE A REVIEW -->
+  <section class="leave-review-section" id="leave-review">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Share Your Experience</span>
+        <h2>Leave a Review</h2>
+        <p class="section-lead">Submitted reviews are held for approval before appearing publicly.</p>
+      </div>
+      <form class="the-form reveal" name="review-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="reviewForm">
+        <input type="hidden" name="form-name" value="review-submission" />
+        <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name *</label><input type="text" name="reviewer_name" required placeholder="Jane D." /></div>
+          <div class="form-group"><label>Service Used *</label><select name="service_used" required><option value="">Select a service</option><option>Overnight House Sitting</option><option>Extended Stay (5+ nights)</option><option>Drop-In Visit</option><option>Dog Walking</option><option>Home Watch (No Pets)</option><option>Custom Package</option></select></div>
+        </div>
+        <div class="form-group">
+          <label>Overall Rating *</label>
+          <div class="star-row" data-field="overall_rating"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div>
+          <input type="hidden" name="overall_rating" required />
+        </div>
+        <div class="ratings-block">
+          <p class="ratings-label">Rate each area</p>
+          <div class="ratings-grid">
+            <div class="rating-row"><label>Home Cleanliness</label><div class="star-row" data-field="cleanliness"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="cleanliness"/></div>
+            <div class="rating-row"><label>Communication &amp; Updates</label><div class="star-row" data-field="communication"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="communication"/></div>
+            <div class="rating-row"><label>Adherence to House Rules</label><div class="star-row" data-field="house_rules"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="house_rules"/></div>
+            <div class="rating-row"><label>Pet &amp; Feeding Care</label><div class="star-row" data-field="pet_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="pet_care"/></div>
+            <div class="rating-row"><label>Punctuality &amp; Reliability</label><div class="star-row" data-field="punctuality"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="punctuality"/></div>
+            <div class="rating-row"><label>Safety &amp; Security</label><div class="star-row" data-field="safety"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="safety"/></div>
+            <div class="rating-row"><label>Plant Care (if applicable)</label><div class="star-row" data-field="plant_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="plant_care"/></div>
+            <div class="rating-row"><label>Stayed for Agreed Time</label><div class="star-row" data-field="time_kept"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="time_kept"/></div>
+            <div class="rating-row"><label>No Unauthorized Guests</label><div class="star-row" data-field="no_guests"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="no_guests"/></div>
+            <div class="rating-row"><label>Would Recommend</label><div class="star-row" data-field="would_recommend"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="would_recommend"/></div>
+          </div>
+        </div>
+        <div class="form-group"><label>Your Review *</label><textarea name="review_text" rows="5" required placeholder="Tell others about your experience..."></textarea></div>
+        <div class="form-group"><label>Pet Name(s) <span class="optional">optional</span></label><input type="text" name="pet_names" placeholder="e.g. Mango &amp; Biscuit" /></div>
+        <button type="submit" class="btn-primary">Submit Review</button>
+        <p class="form-note">Reviews are approved before appearing publicly. Thank you!</p>
+      </form>
+      <div class="success-card" id="reviewSuccess" style="display:none"><div class="s-icon">🐾</div><h3>Thank you!</h3><p>Your review will appear once approved. I truly appreciate it.</p></div>
+    </div>
+  </section>
+
+  <!-- SECTION: CONTACT -->
+  <section class="page-section contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-left reveal">
+        <span class="section-tag">Get in Touch</span>
+        <h2>Have a question first?</h2>
+        <p>I'm always happy to chat before you book — about your pets, your home, your routines, or anything else. Reach out anytime.</p>
+        <div class="contact-details">
+          <a href="mailto:erika.s.huang@gmail.com" class="contact-item"><span>📧</span><span>erika.s.huang@gmail.com</span></a>
+          <a href="tel:+15708724948" class="contact-item"><span>📞</span><span>+1 (570) 872-4948</span></a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="the-form reveal" name="contact-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+          <input type="hidden" name="form-name" value="contact-inquiry" />
+          <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
+          <div class="form-group"><label>Your Name *</label><input type="text" name="name" required placeholder="Your name" /></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
+          <div class="form-group"><label>Message *</label><textarea name="message" rows="5" required placeholder="Ask me anything..."></textarea></div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+        <div class="success-card" id="contactSuccess" style="display:none"><div class="s-icon">💌</div><h3>Message sent!</h3><p>I'll reply within a few hours.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: BOOK -->
+  <section class="page-section book-section" id="book">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Book a Service</span>
+        <h2>Request a Booking</h2>
+        <p class="section-lead">Fill out the form and I'll get back to you within 24 hours. No payment collected here.</p>
+      </div>
+      <form class="the-form booking-form reveal" name="booking-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking-request" />
+        <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name *</label><input type="text" name="name" required placeholder="Your full name" /></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000" /></div>
+          <div class="form-group"><label>Location / Neighborhood *</label><input type="text" name="location" required placeholder="e.g. Upper West Side, NYC" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Service Requested *</label><select name="service" required><option value="">Select a service</option><option>Overnight House Sitting</option><option>Extended Stay (5+ nights)</option><option>Drop-In Visit</option><option>Dog Walking</option><option>Home Watch (No Pets)</option><option>Custom Package</option></select></div>
+          <div class="form-group"><label>Number of Pets</label><select name="num_pets"><option value="0">No pets</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4+">4 or more</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Start Date *</label><input type="date" name="start_date" required /></div>
+          <div class="form-group"><label>End Date *</label><input type="date" name="end_date" required /></div>
+        </div>
+        <div class="form-group"><label>Pet Details <span class="optional">breed, age, special needs</span></label><input type="text" name="pet_details" placeholder="e.g. 2 dogs (Lab mix 4yr + Chihuahua 8yr), 1 cat" /></div>
+        <div class="form-group"><label>Special Instructions or Questions</label><textarea name="special_instructions" rows="4" placeholder="Feeding schedules, medications, house rules, plant care, anything important..."></textarea></div>
+        <div class="checkboxes">
+          <label class="cb-label"><input type="checkbox" name="meet_greet" value="yes" /> I'd like a meet &amp; greet before confirming</label>
+          <label class="cb-label"><input type="checkbox" name="has_plants" value="yes" /> I have plants that need watering</label>
+          <label class="cb-label"><input type="checkbox" name="mail_collection" value="yes" /> I need mail &amp; package collection</label>
+        </div>
+        <div class="form-group"><label>How did you hear about Hearth &amp; Paws? <span class="optional">optional</span></label><select name="referral_source"><option value="">Select one</option><option>Word of mouth / referral</option><option>Google search</option><option>Instagram</option><option>Nextdoor</option><option>Other</option></select></div>
+        <button type="submit" class="btn-primary">Send Booking Request</button>
+        <p class="form-note">I'll be in touch within 24 hours. Can't wait to meet your home — and your pets.</p>
+      </form>
+      <div class="success-card" id="bookingSuccess" style="display:none"><div class="s-icon">🏡</div><h3>Booking request received!</h3><p>I'll reach out within 24 hours to confirm your dates.</p></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-logo">Hearth <em>&</em> Paws</div>
+      <p class="footer-sub">Trusted house &amp; pet sitting · NYC &amp; Miami</p>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Hearth &amp; Paws · Erika S. Huang · All rights reserved</p>
+      <p class="footer-k">Made with love — and Khaleesi's approval</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
