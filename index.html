@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/lang.css" />
 </head>
 <body>
 
@@ -17,11 +18,17 @@
     <nav class="nav container">
       <a href="#home" class="nav-logo">Hearth <em>&</em> Paws</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#book" class="nav-book">Book Now</a></li>
+        <li><a href="#about"    data-section="about"   ><span id="t-nav-about">About</span></a></li>
+        <li><a href="#services" data-section="services"><span id="t-nav-services">Services</span></a></li>
+        <li><a href="#reviews"  data-section="reviews" ><span id="t-nav-reviews">Reviews</span></a></li>
+        <li><a href="#contact"  data-section="contact" ><span id="t-nav-contact">Contact</span></a></li>
+        <li><a href="#book" class="nav-book" id="t-nav-book">Book Now</a></li>
+        <li class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+          <button class="lang-btn" data-lang="it">IT</button>
+        </li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -32,11 +39,17 @@
   <!-- MOBILE DRAWER -->
   <div class="drawer" id="drawer">
     <button class="drawer-close" id="drawerClose">✕</button>
-    <a href="#about" class="drawer-link" onclick="closeDrawer()">About</a>
-    <a href="#services" class="drawer-link" onclick="closeDrawer()">Services</a>
-    <a href="#reviews" class="drawer-link" onclick="closeDrawer()">Reviews</a>
-    <a href="#contact" class="drawer-link" onclick="closeDrawer()">Contact</a>
-    <a href="#book" class="drawer-link drawer-book" onclick="closeDrawer()">Book Now</a>
+    <a href="#about"    class="drawer-link" onclick="closeDrawer()"><span id="t-drawer-about">About</span></a>
+    <a href="#services" class="drawer-link" onclick="closeDrawer()"><span id="t-drawer-services">Services</span></a>
+    <a href="#reviews"  class="drawer-link" onclick="closeDrawer()"><span id="t-drawer-reviews">Reviews</span></a>
+    <a href="#contact"  class="drawer-link" onclick="closeDrawer()"><span id="t-drawer-contact">Contact</span></a>
+    <a href="#book"     class="drawer-link drawer-book" onclick="closeDrawer()"><span id="t-drawer-book">Book Now</span></a>
+    <div class="drawer-lang">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
   </div>
   <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
 
@@ -49,24 +62,22 @@
     </div>
     <div class="hero-inner container">
       <div class="hero-text">
-        <p class="eyebrow animate-1">Available Whereever My Travels Take Me (but, usually New York City)</p>
-        <h1 class="animate-2">Your home, <em>cared for.</em><br>Your pets, <em>adored.</em></h1>
-        <p class="hero-lead animate-3">Professional house, pet sitting &amp; dog walking with the warmth, reliability, and attention to detail that lets you travel without a second thought.</p>
+        <p class="eyebrow animate-1" id="t-hero-location">Available Wherever My Travels Take Me (but, usually New York City)</p>
+        <h1 class="animate-2" id="t-hero-h1">Your home, <em>cared for.</em><br>Your pets, <em>adored.</em></h1>
+        <p class="hero-lead animate-3" id="t-hero-lead">Professional house, pet sitting &amp; dog walking with the warmth, reliability, and attention to detail that lets you travel without a second thought.</p>
         <div class="hero-actions animate-4">
-          <a href="#book" class="btn-primary">Request a Booking</a>
-          <a href="#services" class="btn-outline">See Services</a>
+          <a href="#book"     class="btn-primary" id="t-hero-btn1">Request a Booking</a>
+          <a href="#services" class="btn-outline"  id="t-hero-btn2">See Services</a>
         </div>
       </div>
       <div class="hero-pills animate-5">
-        <div class="pill">Home-Trusted</div>
-        <div class="pill">Pet-First Care</div>
-        <div class="pill">Daily Updates</div>
-        <div class="pill">Background Checked</div>
+        <div class="pill" id="t-pill-1">Home-Trusted</div>
+        <div class="pill" id="t-pill-2">Pet-First Care</div>
+        <div class="pill" id="t-pill-3">Daily Updates</div>
+        <div class="pill" id="t-pill-4">Background Checked</div>
       </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll">
-      <span></span>
-    </a>
+    <a href="#about" class="scroll-cue" aria-label="Scroll"><span></span></a>
   </section>
 
   <!-- SECTION: ABOUT -->
@@ -78,68 +89,68 @@
         <div class="about-photo-col">
           <div class="photo-frame">
             <img src="images/erika.jpg.jpeg" alt="Erika H." />
-            <div class="photo-fallback">Erika's Photo</div>
+            <div class="photo-fallback" style="display:none">Erika's Photo</div>
           </div>
         </div>
         <div class="about-text-col">
-          <span class="section-tag">About Erika</span>
-          <h2>Hi, I'm Erika.</h2>
-          <p>I'm a New York City (born and raised) professional with a decade of experience managing high-stakes client relationships and complex operations. Butmns,d, this isn't just limited to the office! During a 5 year stint in Spain, I taught English privately and at a high school in Vallecas, Madrid, and obtained an MBA! My love for animals found me pet sitting for clients in Spain, Arizona, Taiwan, Miami, and my home-base, NY.</p> 
-          <p>I bring the same standard of care, precision, and genuine investment to every home I sit for and every fur baby I care for.</p>
-          <p>I treat your home as if it were mine and your pets as if they were family. Daily photo and video updates, strict routine adherence, and round-the-clock availability — every time.</p>
+          <span class="section-tag" id="t-about-tag">About Erika</span>
+          <h2 id="t-about-h2">Hi, I'm Erika.</h2>
+          <p id="t-about-p1">I'm a New York City (born and raised) professional with a decade of experience managing high-stakes client relationships and complex operations. But this isn't just limited to the office! During a 5 year stint in Spain, I taught English privately and at a high school in Vallecas, Madrid, and obtained an MBA! My love for animals found me pet sitting for clients in Spain, Arizona, Taiwan, Miami, and my home-base, NY.</p>
+          <p id="t-about-p2">I bring the same standard of care, precision, and genuine investment to every home I sit for and every fur baby I care for.</p>
+          <p id="t-about-p3">I treat your home as if it were mine and your pets as if they were family. Daily photo and video updates, strict routine adherence, and round-the-clock availability — every time.</p>
           <ul class="about-list">
-            <li>Background-checked, references available upon request</li>
-            <li>Daily photo &amp; video updates via your preferred app</li>
-            <li>Strict adherence to feeding schedules &amp; house rules</li>
-            <li>Plant care, mail collection &amp; security checks included</li>
-            <li>Multilingual: English, Spanish, Italian, Mandarin &amp; elementary German</li>
+            <li id="t-about-li1">Background-checked, references available upon request</li>
+            <li id="t-about-li2">Daily photo &amp; video updates via your preferred app</li>
+            <li id="t-about-li3">Strict adherence to feeding schedules &amp; house rules</li>
+            <li id="t-about-li4">Plant care, mail collection &amp; security checks included</li>
+            <li id="t-about-li5">Multilingual: English, Spanish, Italian, Mandarin &amp; elementary German</li>
           </ul>
         </div>
       </div>
 
       <!-- Divider -->
       <div class="section-divider reveal">
-        <span>Introducing our Chief of Staff</span>
+        <span id="t-divider">Introducing our Chief of Staff</span>
       </div>
 
       <!-- Khaleesi -->
       <div class="about-block about-block-flip reveal">
         <div class="about-text-col">
-          <span class="section-tag teal-tag">Chief of Staff</span>
-          <h2>Meet Khaleesi.</h2>
-          <p class="khaleesi-intro">14 years young. Shih-Tzu Poodle. Cancer survivor. Certified road warrior.</p>
-          <p>Khaleesi is the heart behind Hearth &amp; Paws. A sun-loving, scent-led adventurer who has survived cancer with the grace of a queen, she has kept her nose out the car window through every road trip, and has never once taken a walk she didn't personally curate.</p>
-          <p>She is proof that animals deserve patience, intention, and a whole lot of love. Every pet I care for, I bring Khaleesi's standard with me.</p>
+          <span class="section-tag teal-tag" id="t-k-tag">Chief of Staff</span>
+          <h2 id="t-k-h2">Meet Khaleesi.</h2>
+          <p class="khaleesi-intro" id="t-k-intro">14 years young. Shih-Tzu Poodle. Cancer survivor. Certified road warrior.</p>
+          <p id="t-k-p1">Khaleesi is the heart behind Hearth &amp; Paws. A sun-loving, scent-led adventurer who has survived cancer with the grace of a queen, she has kept her nose out the car window through every road trip, and has never once taken a walk she didn't personally curate.</p>
+          <p id="t-k-p2">She is proof that animals deserve patience, intention, and a whole lot of love. Every pet I care for, I bring Khaleesi's standard with me.</p>
           <div class="k-badges">
-            <span>Chief Scent Officer</span>
-            <span>Sun Bon-Vivant</span>
-            <span>Road Warrior</span>
-            <span>Cancer Survivor</span>
-            <span>Mind of Her Own</span>
+            <span id="t-k-b1">Chief Scent Officer</span>
+            <span id="t-k-b2">Sun Bon-Vivant</span>
+            <span id="t-k-b3">Road Warrior</span>
+            <span id="t-k-b4">Cancer Survivor</span>
+            <span id="t-k-b5">Mind of Her Own</span>
           </div>
         </div>
         <div class="about-photo-col">
           <div class="photo-frame photo-frame-warm">
             <img src="images/khaleesi.jpg.jpeg" alt="Khaleesi — Chief of Staff" />
-            <div class="photo-fallback">Khaleesi's Photo</div>
+            <div class="photo-fallback" style="display:none">Khaleesi's Photo</div>
           </div>
         </div>
       </div>
 
       <!-- Gallery -->
       <div class="gallery-block reveal">
-        <span class="section-tag">Pets I've Cared For</span>
-        <h3>A few familiar faces.</h3>
+        <span class="section-tag" id="t-gallery-tag">Pets I've Cared For</span>
+        <h3 id="t-gallery-h3">A few familiar faces.</h3>
         <div class="gallery-grid">
-          <div class="gallery-item"><img src="images/pet-1.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-2.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-3.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-4.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-5.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-6.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-7.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-8.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-          <div class="gallery-item"><img src="images/pet-9.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-1.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-2.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-3.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-4.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-5.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-6.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-7.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-8.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
+          <div class="gallery-item"><img src="images/pet-9.jpg.jpeg"  alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
           <div class="gallery-item"><img src="images/pet-10.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
           <div class="gallery-item"><img src="images/pet-11.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
           <div class="gallery-item"><img src="images/pet-12.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
@@ -150,15 +161,8 @@
           <div class="gallery-item"><img src="images/pet-17.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
           <div class="gallery-item"><img src="images/pet-18.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
           <div class="gallery-item"><img src="images/pet-19.jpg.jpeg" alt="Pet" onerror="this.parentElement.classList.add('gal-fallback')" /><div class="gal-fallback-text">Pet Photo</div></div>
-<div class="gallery-item gallery-coming-soon">
-  <span>🐾</span>
-  <p>Coming Soon</p>
-</div>
-
-<div class="gallery-item gallery-coming-soon">
-  <span>🐾</span>
-  <p>Coming Soon</p>
-</div>
+          <div class="gallery-coming-soon"><span>🐾</span><p id="t-coming-soon">Coming Soon</p></div>
+          <div class="gallery-coming-soon"><span>🐾</span><p class="t-coming-soon-dup">Coming Soon</p></div>
         </div>
       </div>
 
@@ -169,17 +173,61 @@
   <section class="page-section services-section" id="services">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">What I Offer</span>
-        <h2>Services &amp; Pricing*</h2>
-<p class="section-lead" id="t-svc-lead">All overnight services include daily photo/video updates, plant care, mail collection, and 24/7 availability. Based in NYC — and available wherever my travels take me. Reach out to check availability for your location; I may be where you need me, worldwide!<br><br>*Please inquire directly if your dog is over 50 lbs for any of the services below.</p>
+        <span class="section-tag" id="t-svc-tag">What I Offer</span>
+        <h2 id="t-svc-h2">Services &amp; Pricing*</h2>
+        <p class="section-lead" id="t-svc-lead">All overnight services include daily photo/video updates, plant care, mail collection, and 24/7 availability. Based in NYC — and available wherever my travels take me. Reach out to check availability for your location; I may be where you need me, worldwide!<br><br>*Please inquire directly if your dog is over 50 lbs for any of the services below.</p>
       </div>
       <div class="services-grid">
-        <div class="svc-card reveal"><div class="svc-num">01</div><h3>Overnight House Sitting</h3><p>I stay in your home overnight, maintaining your full routine — feeding, walks, playtime, and security checks.</p><div class="svc-price">From $75 <em>/ night</em></div><a href="#book" class="btn-svc">Book This</a></div>
-        <div class="svc-card svc-featured reveal"><div class="svc-badge">Most Popular</div><div class="svc-num">02</div><h3>Extended Stay</h3><p>6+ night stays with full home management — pet care, plant watering, mail, and daily check-ins with you.</p><div class="svc-price">From $65 <em>/ night</em></div><a href="#book" class="btn-svc">Book This</a></div>
-        <div class="svc-card reveal"><div class="svc-num">03</div><h3>Drop-In Visit</h3><p>30–60 minute visits for feeding, a walk, or a home check. Pricing based on location.</p><div class="svc-price">From $30 <em>/ visit</em></div><a href="#book" class="btn-svc">Book This</a></div>
-        <div class="svc-card reveal"><div class="svc-num">04</div><h3>Dog Walking</h3><p>30 or 60-minute walks with a post-walk report card and photo update sent straight to you.</p><div class="svc-price">From $25 <em>/ walk</em></div><a href="#book" class="btn-svc">Book This</a></div>
-        <div class="svc-card reveal"><div class="svc-num">05</div><h3>Home Watch</h3><p>Regular home checks, mail collection, plant watering, and security walkthroughs. No pets required.</p><div class="svc-price">From $40 <em>/ visit</em></div><a href="#book" class="btn-svc">Book This</a></div>
-        <div class="svc-card svc-custom reveal"><div class="svc-num">06</div><h3>Custom Package</h3><p>Unique needs? Let's build something around your schedule, pets, and home.</p><div class="svc-price">Custom Pricing</div><a href="#contact" class="btn-svc">Get in Touch</a></div>
+
+        <div class="svc-card reveal">
+          <div class="svc-num">01</div>
+          <h3 id="t-svc1-h">Overnight House Sitting</h3>
+          <p id="t-svc1-p">I stay in your home overnight, maintaining your full routine — feeding, walks, playtime, and security checks.</p>
+          <div class="svc-price"><span id="t-svc1-price">From $75</span> <em id="t-svc1-unit">/ night</em></div>
+          <a href="#book" class="btn-svc t-btn-book">Book This</a>
+        </div>
+
+        <div class="svc-card svc-featured reveal">
+          <div class="svc-badge" id="t-badge-popular">Most Popular</div>
+          <div class="svc-num">02</div>
+          <h3 id="t-svc2-h">Extended Stay</h3>
+          <p id="t-svc2-p">6+ night stays with full home management — pet care, plant watering, mail, and daily check-ins with you.</p>
+          <div class="svc-price"><span id="t-svc2-price">From $65</span> <em id="t-svc2-unit">/ night</em></div>
+          <a href="#book" class="btn-svc t-btn-book">Book This</a>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-num">03</div>
+          <h3 id="t-svc3-h">Drop-In Visit</h3>
+          <p id="t-svc3-p">30–60 minute visits for feeding, a walk, or a home check. Pricing based on location.</p>
+          <div class="svc-price"><span id="t-svc3-price">From $30</span> <em id="t-svc3-unit">/ visit</em></div>
+          <a href="#book" class="btn-svc t-btn-book">Book This</a>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-num">04</div>
+          <h3 id="t-svc4-h">Dog Walking</h3>
+          <p id="t-svc4-p">30 or 60-minute walks with a post-walk report card and photo update sent straight to you.</p>
+          <div class="svc-price"><span id="t-svc4-price">From $25</span> <em id="t-svc4-unit">/ walk</em></div>
+          <a href="#book" class="btn-svc t-btn-book">Book This</a>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-num">05</div>
+          <h3 id="t-svc5-h">Home Watch</h3>
+          <p id="t-svc5-p">Regular home checks, mail collection, plant watering, and security walkthroughs. No pets required.</p>
+          <div class="svc-price"><span id="t-svc5-price">From $40</span> <em id="t-svc5-unit">/ visit</em></div>
+          <a href="#book" class="btn-svc t-btn-book">Book This</a>
+        </div>
+
+        <div class="svc-card svc-custom reveal">
+          <div class="svc-num">06</div>
+          <h3 id="t-svc6-h">Custom Package</h3>
+          <p id="t-svc6-p">Unique needs? Let's build something around your schedule, pets, and home.</p>
+          <div class="svc-price"><span id="t-svc6-price">Custom Pricing</span></div>
+          <a href="#contact" class="btn-svc" id="t-btn-get-touch">Get in Touch</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -188,14 +236,14 @@
   <section class="page-section reviews-section" id="reviews">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Client Reviews</span>
-        <h2>What Clients Say</h2>
-        <p class="section-lead">All reviews are submitted by verified clients and approved before appearing here.</p>
+        <span class="section-tag" id="t-rev-tag">Client Reviews</span>
+        <h2 id="t-rev-h2">What Clients Say</h2>
+        <p class="section-lead" id="t-rev-lead">All reviews are submitted by verified clients and approved before appearing here.</p>
       </div>
       <div class="reviews-grid" id="reviewsGrid"></div>
       <div class="review-invite reveal">
-        <p>Had a great experience? I'd genuinely love to hear from you.</p>
-        <a href="#leave-review" class="btn-primary">Leave a Review</a>
+        <p id="t-rev-invite">Had a great experience? I'd genuinely love to hear from you.</p>
+        <a href="#leave-review" class="btn-primary" id="t-rev-btn">Leave a Review</a>
       </div>
     </div>
   </section>
@@ -204,43 +252,67 @@
   <section class="leave-review-section" id="leave-review">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Share Your Experience</span>
-        <h2>Leave a Review</h2>
-        <p class="section-lead">Submitted reviews are held for approval before appearing publicly.</p>
+        <span class="section-tag" id="t-lr-tag">Share Your Experience</span>
+        <h2 id="t-lr-h2">Leave a Review</h2>
+        <p class="section-lead" id="t-lr-lead">Submitted reviews are held for approval before appearing publicly.</p>
       </div>
       <form class="the-form reveal" name="review-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="reviewForm">
         <input type="hidden" name="form-name" value="review-submission" />
         <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
         <div class="form-row">
-          <div class="form-group"><label>Your Name *</label><input type="text" name="reviewer_name" required placeholder="Jane D." /></div>
-          <div class="form-group"><label>Service Used *</label><select name="service_used" required><option value="">Select a service</option><option>Overnight House Sitting</option><option>Extended Stay (5+ nights)</option><option>Drop-In Visit</option><option>Dog Walking</option><option>Home Watch (No Pets)</option><option>Custom Package</option></select></div>
+          <div class="form-group">
+            <label id="t-lr-name">Your Name *</label>
+            <input type="text" name="reviewer_name" required placeholder="Jane D." />
+          </div>
+          <div class="form-group">
+            <label id="t-lr-svc">Service Used *</label>
+            <select name="service_used" required>
+              <option value="" id="t-lr-select">Select a service</option>
+              <option>Overnight House Sitting</option>
+              <option>Extended Stay (5+ nights)</option>
+              <option>Drop-In Visit</option>
+              <option>Dog Walking</option>
+              <option>Home Watch (No Pets)</option>
+              <option>Custom Package</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
-          <label>Overall Rating *</label>
+          <label id="t-lr-overall">Overall Rating *</label>
           <div class="star-row" data-field="overall_rating"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div>
           <input type="hidden" name="overall_rating" required />
         </div>
         <div class="ratings-block">
-          <p class="ratings-label">Rate each area</p>
+          <p class="ratings-label" id="t-lr-areas">Rate each area</p>
           <div class="ratings-grid">
-            <div class="rating-row"><label>Home Cleanliness</label><div class="star-row" data-field="cleanliness"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="cleanliness"/></div>
-            <div class="rating-row"><label>Communication &amp; Updates</label><div class="star-row" data-field="communication"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="communication"/></div>
-            <div class="rating-row"><label>Adherence to House Rules</label><div class="star-row" data-field="house_rules"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="house_rules"/></div>
-            <div class="rating-row"><label>Pet &amp; Feeding Care</label><div class="star-row" data-field="pet_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="pet_care"/></div>
-            <div class="rating-row"><label>Punctuality &amp; Reliability</label><div class="star-row" data-field="punctuality"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="punctuality"/></div>
-            <div class="rating-row"><label>Safety &amp; Security</label><div class="star-row" data-field="safety"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="safety"/></div>
-            <div class="rating-row"><label>Plant Care (if applicable)</label><div class="star-row" data-field="plant_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="plant_care"/></div>
-            <div class="rating-row"><label>Stayed for Agreed Time</label><div class="star-row" data-field="time_kept"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="time_kept"/></div>
-            <div class="rating-row"><label>No Unauthorized Guests</label><div class="star-row" data-field="no_guests"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="no_guests"/></div>
-            <div class="rating-row"><label>Would Recommend</label><div class="star-row" data-field="would_recommend"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="would_recommend"/></div>
+            <div class="rating-row"><label id="t-lr-r1">Home Cleanliness</label><div class="star-row" data-field="cleanliness"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="cleanliness"/></div>
+            <div class="rating-row"><label id="t-lr-r2">Communication &amp; Updates</label><div class="star-row" data-field="communication"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="communication"/></div>
+            <div class="rating-row"><label id="t-lr-r3">Adherence to House Rules</label><div class="star-row" data-field="house_rules"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="house_rules"/></div>
+            <div class="rating-row"><label id="t-lr-r4">Pet &amp; Feeding Care</label><div class="star-row" data-field="pet_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="pet_care"/></div>
+            <div class="rating-row"><label id="t-lr-r5">Punctuality &amp; Reliability</label><div class="star-row" data-field="punctuality"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="punctuality"/></div>
+            <div class="rating-row"><label id="t-lr-r6">Safety &amp; Security</label><div class="star-row" data-field="safety"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="safety"/></div>
+            <div class="rating-row"><label id="t-lr-r7">Plant Care (if applicable)</label><div class="star-row" data-field="plant_care"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="plant_care"/></div>
+            <div class="rating-row"><label id="t-lr-r8">Stayed for Agreed Time</label><div class="star-row" data-field="time_kept"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="time_kept"/></div>
+            <div class="rating-row"><label id="t-lr-r9">No Unauthorized Guests</label><div class="star-row" data-field="no_guests"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="no_guests"/></div>
+            <div class="rating-row"><label id="t-lr-r10">Would Recommend</label><div class="star-row" data-field="would_recommend"><span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span></div><input type="hidden" name="would_recommend"/></div>
           </div>
         </div>
-        <div class="form-group"><label>Your Review *</label><textarea name="review_text" rows="5" required placeholder="Tell others about your experience..."></textarea></div>
-        <div class="form-group"><label>Pet Name(s) <span class="optional">optional</span></label><input type="text" name="pet_names" placeholder="e.g. Mango &amp; Biscuit" /></div>
-        <button type="submit" class="btn-primary">Submit Review</button>
-        <p class="form-note">Reviews are approved before appearing publicly. Thank you!</p>
+        <div class="form-group">
+          <label id="t-lr-review">Your Review *</label>
+          <textarea name="review_text" rows="5" required placeholder="Tell others about your experience..."></textarea>
+        </div>
+        <div class="form-group">
+          <label id="t-lr-pets">Pet Name(s) <span class="optional t-lr-optional">optional</span></label>
+          <input type="text" name="pet_names" placeholder="e.g. Mango &amp; Biscuit" />
+        </div>
+        <button type="submit" class="btn-primary" id="t-lr-submit">Submit Review</button>
+        <p class="form-note" id="t-lr-note">Reviews are approved before appearing publicly. Thank you!</p>
       </form>
-      <div class="success-card" id="reviewSuccess" style="display:none"><div class="s-icon">🐾</div><h3>Thank you!</h3><p>Your review will appear once approved. I truly appreciate it.</p></div>
+      <div class="success-card" id="reviewSuccess" style="display:none">
+        <div class="s-icon">🐾</div>
+        <h3 id="t-lr-success-h">Thank you!</h3>
+        <p id="t-lr-success-p">Your review will appear once approved. I truly appreciate it.</p>
+      </div>
     </div>
   </section>
 
@@ -248,9 +320,9 @@
   <section class="page-section contact-section" id="contact">
     <div class="container contact-grid">
       <div class="contact-left reveal">
-        <span class="section-tag">Get in Touch</span>
-        <h2>Have a question first?</h2>
-        <p>I'm always happy to chat before you book — about your pets, your home, your routines, or anything else. Reach out anytime.</p>
+        <span class="section-tag" id="t-con-tag">Get in Touch</span>
+        <h2 id="t-con-h2">Have a question first?</h2>
+        <p id="t-con-p">I'm always happy to chat before you book — about your pets, your home, your routines, or anything else. Reach out anytime.</p>
         <div class="contact-details">
           <a href="mailto:erikashnyc@proton.me" class="contact-item"><span>📧</span><span>erikashnyc@proton.me</span></a>
           <a href="tel:+17864710638" class="contact-item"><span>📞</span><span>+1 (786) 471-0638</span></a>
@@ -260,12 +332,16 @@
         <form class="the-form reveal" name="contact-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
           <input type="hidden" name="form-name" value="contact-inquiry" />
           <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
-          <div class="form-group"><label>Your Name *</label><input type="text" name="name" required placeholder="Your name" /></div>
-          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
-          <div class="form-group"><label>Message *</label><textarea name="message" rows="5" required placeholder="Ask me anything..."></textarea></div>
-          <button type="submit" class="btn-primary">Send Message</button>
+          <div class="form-group"><label id="t-con-name">Your Name *</label><input type="text" name="name" required placeholder="Your name" /></div>
+          <div class="form-group"><label id="t-con-email">Email *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
+          <div class="form-group"><label id="t-con-msg">Message *</label><textarea name="message" rows="5" required placeholder="Ask me anything..."></textarea></div>
+          <button type="submit" class="btn-primary" id="t-con-send">Send Message</button>
         </form>
-        <div class="success-card" id="contactSuccess" style="display:none"><div class="s-icon">💌</div><h3>Message sent!</h3><p>I'll reply within a few hours.</p></div>
+        <div class="success-card" id="contactSuccess" style="display:none">
+          <div class="s-icon">💌</div>
+          <h3 id="t-con-success-h">Message sent!</h3>
+          <p id="t-con-success-p">I'll reply within a few hours.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -274,41 +350,79 @@
   <section class="page-section book-section" id="book">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Book a Service</span>
-        <h2>Request a Booking</h2>
-        <p class="section-lead">Fill out the form and I'll get back to you within 24 hours. No payment collected here.</p>
+        <span class="section-tag" id="t-book-tag">Book a Service</span>
+        <h2 id="t-book-h2">Request a Booking</h2>
+        <p class="section-lead" id="t-book-lead">Fill out the form and I'll get back to you within 24 hours. No payment collected here.</p>
       </div>
       <form class="the-form booking-form reveal" name="booking-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
         <input type="hidden" name="form-name" value="booking-request" />
         <p style="display:none"><label>Skip: <input name="bot-field" /></label></p>
         <div class="form-row">
-          <div class="form-group"><label>Full Name *</label><input type="text" name="name" required placeholder="Your full name" /></div>
-          <div class="form-group"><label>Email Address *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
+          <div class="form-group"><label id="t-book-name">Full Name *</label><input type="text" name="name" required placeholder="Your full name" /></div>
+          <div class="form-group"><label id="t-book-email">Email Address *</label><input type="email" name="email" required placeholder="your@email.com" /></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000" /></div>
-          <div class="form-group"><label>Location / Neighborhood *</label><input type="text" name="location" required placeholder="e.g. Upper West Side, NYC" /></div>
+          <div class="form-group"><label id="t-book-phone">Phone Number</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000" /></div>
+          <div class="form-group"><label id="t-book-loc">Location / Neighborhood *</label><input type="text" name="location" required placeholder="e.g. Upper West Side, NYC" /></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Service Requested *</label><select name="service" required><option value="">Select a service</option><option>Overnight House Sitting</option><option>Extended Stay (5+ nights)</option><option>Drop-In Visit</option><option>Dog Walking</option><option>Home Watch (No Pets)</option><option>Custom Package</option></select></div>
-          <div class="form-group"><label>Number of Pets</label><select name="num_pets"><option value="0">No pets</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4+">4 or more</option></select></div>
+          <div class="form-group">
+            <label id="t-book-svc">Service Requested *</label>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Overnight House Sitting</option>
+              <option>Extended Stay (5+ nights)</option>
+              <option>Drop-In Visit</option>
+              <option>Dog Walking</option>
+              <option>Home Watch (No Pets)</option>
+              <option>Custom Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="t-book-pets">Number of Pets</label>
+            <select name="num_pets">
+              <option value="0">No pets</option>
+              <option value="1">1</option><option value="2">2</option>
+              <option value="3">3</option><option value="4+">4 or more</option>
+            </select>
+          </div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Start Date *</label><input type="date" name="start_date" required /></div>
-          <div class="form-group"><label>End Date *</label><input type="date" name="end_date" required /></div>
+          <div class="form-group"><label id="t-book-start">Start Date *</label><input type="date" name="start_date" required /></div>
+          <div class="form-group"><label id="t-book-end">End Date *</label><input type="date" name="end_date" required /></div>
         </div>
-        <div class="form-group"><label>Pet Details <span class="optional">breed, age, special needs</span></label><input type="text" name="pet_details" placeholder="e.g. 2 dogs (Lab mix 4yr + Chihuahua 8yr), 1 cat" /></div>
-        <div class="form-group"><label>Special Instructions or Questions</label><textarea name="special_instructions" rows="4" placeholder="Feeding schedules, medications, house rules, plant care, anything important..."></textarea></div>
+        <div class="form-group">
+          <label id="t-book-details">Pet Details <span class="optional" id="t-book-details-hint">breed, age, special needs</span></label>
+          <input type="text" name="pet_details" placeholder="e.g. 2 dogs (Lab mix 4yr + Chihuahua 8yr), 1 cat" />
+        </div>
+        <div class="form-group">
+          <label id="t-book-special">Special Instructions or Questions</label>
+          <textarea name="special_instructions" rows="4" placeholder="Feeding schedules, medications, house rules, plant care, anything important..."></textarea>
+        </div>
         <div class="checkboxes">
-          <label class="cb-label"><input type="checkbox" name="meet_greet" value="yes" /> I'd like a meet &amp; greet before confirming</label>
-          <label class="cb-label"><input type="checkbox" name="has_plants" value="yes" /> I have plants that need watering</label>
-          <label class="cb-label"><input type="checkbox" name="mail_collection" value="yes" /> I need mail &amp; package collection</label>
+          <label class="cb-label"><input type="checkbox" name="meet_greet" value="yes" /> <span id="t-book-cb1">I'd like a meet &amp; greet before confirming</span></label>
+          <label class="cb-label"><input type="checkbox" name="has_plants" value="yes" /> <span id="t-book-cb2">I have plants that need watering</span></label>
+          <label class="cb-label"><input type="checkbox" name="mail_collection" value="yes" /> <span id="t-book-cb3">I need mail &amp; package collection</span></label>
         </div>
-        <div class="form-group"><label>How did you hear about Hearth &amp; Paws? <span class="optional">optional</span></label><select name="referral_source"><option value="">Select one</option><option>Word of mouth / referral</option><option>Google search</option><option>Instagram</option><option>Nextdoor</option><option>Other</option></select></div>
-        <button type="submit" class="btn-primary">Send Booking Request</button>
-        <p class="form-note">I'll be in touch within 24 hours. Can't wait to meet your home — and your pets.</p>
+        <div class="form-group">
+          <label id="t-book-ref">How did you hear about Hearth &amp; Paws? <span class="optional">optional</span></label>
+          <select name="referral_source">
+            <option value="">Select one</option>
+            <option>Word of mouth / referral</option>
+            <option>Google search</option>
+            <option>Instagram</option>
+            <option>Nextdoor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary" id="t-book-submit">Send Booking Request</button>
+        <p class="form-note" id="t-book-note">I'll be in touch within 24 hours. Can't wait to meet your home — and your pets.</p>
       </form>
-      <div class="success-card" id="bookingSuccess" style="display:none"><div class="s-icon">🏡</div><h3>Booking request received!</h3><p>I'll reach out within 24 hours to confirm your dates.</p></div>
+      <div class="success-card" id="bookingSuccess" style="display:none">
+        <div class="s-icon">🏡</div>
+        <h3 id="t-book-success-h">Booking request received!</h3>
+        <p id="t-book-success-p">I'll reach out within 24 hours to confirm your dates.</p>
+      </div>
     </div>
   </section>
 
@@ -316,7 +430,7 @@
   <footer class="footer">
     <div class="footer-inner container">
       <div class="footer-logo">Hearth <em>&</em> Paws</div>
-      <p class="footer-sub">Trusted house &amp; pet sitting · Aailable wherever I am</p>
+      <p class="footer-sub" id="t-footer-sub">Trusted house &amp; pet sitting · Available wherever I am</p>
       <nav class="footer-nav">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -324,8 +438,8 @@
         <a href="#book">Book</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p class="footer-copy">© 2026 Hearth &amp; Paws · Rico's Closet LLC · All rights reserved</p>
-      <p class="footer-k">Made with love — and Khaleesi's approval</p>
+      <p class="footer-copy" id="t-footer-copy">© 2026 Hearth &amp; Paws · Rico's Closet LLC · All rights reserved</p>
+      <p class="footer-k" id="t-footer-k">Made with love — and Khaleesi's approval</p>
     </div>
   </footer>
 
