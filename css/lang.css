@@ -1,0 +1,73 @@
+/* ── LANGUAGE SWITCHER ───────────────────────────────────── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(61,64,91,0.15);
+}
+.lang-btn {
+  background: none;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #6b6f87;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+.lang-btn:hover {
+  color: #e07a5f;
+  border-color: rgba(224,122,95,0.3);
+}
+.lang-btn.active {
+  color: #e07a5f;
+  border-color: #e07a5f;
+  background: rgba(224,122,95,0.08);
+}
+
+/* Drawer language switcher */
+.drawer-lang {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(61,64,91,0.1);
+}
+.drawer-lang .lang-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  border: 1.5px solid rgba(61,64,91,0.15);
+  border-radius: 8px;
+  font-size: 0.78rem;
+}
+
+/* Coming soon gallery boxes */
+.gallery-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(224,122,95,0.08);
+  border: 2px dashed rgba(224,122,95,0.35);
+  border-radius: 14px;
+  aspect-ratio: 1;
+  gap: 0.5rem;
+}
+.gallery-coming-soon span {
+  font-size: 1.75rem;
+}
+.gallery-coming-soon p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e07a5f;
+  margin: 0;
+}
