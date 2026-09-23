@@ -676,6 +676,14 @@ h3 {
   font-style: normal;
   color: rgba(244,241,222,0.5);
 }
+.svc-note {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(244,241,222,0.45);
+  font-weight: 300;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
 .svc-card .btn-svc { color: var(--apricot); border-color: rgba(242,204,143,0.4); }
 .svc-card .btn-svc:hover { color: var(--eggshell); border-color: var(--eggshell); }
 .svc-featured {
